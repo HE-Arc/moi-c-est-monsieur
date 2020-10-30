@@ -16,11 +16,57 @@
 
         <style>
             body {
-                font-family: 'Nunito';
+            background: #777;
+            height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            }
+            .cards {
+                display: flex;
+            }
+            .card {
+                background: white;
+                border-radius: 1rem;
+                padding: 2rem;
+                margin-left: -2rem;
+                box-shadow: 10px 10px 18px black;
+                transition: 0.2s;
+            }
+            .card:not(:first-child) {
+                margin-left: -4rem;
+            }
+            .card:hover{
+                transform: translateY(-1rem);
+            }
+            /* s'applique aux cartes pas hover */
+            .card:hover ~ .card {
+                transform: translateX(4rem);
             }
         </style>
     </head>
+
     <body class="antialiased">
         <h1>Game</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h2>Title</h2>
+                <p>This is an article</p>
+            </div>
+            <div class="card">
+                <h2>Title</h2>
+                <p>This is an article</p>
+            </div>
+            <div class="card">
+                <h2>Title</h2>
+                <p>This is an article</p>
+            </div>
+            <div class="card">
+                <h2>Title</h2>
+                <p>This is an article</p>
+            </div>
+        </div>
+
     </body>
 </html>
