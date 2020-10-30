@@ -19,10 +19,8 @@
                 font-family: 'Nunito';
             }
         </style>
-
     </head>
     <body class="antialiased">
-        <h1>Welcome</h1>
-		<button type="button" onclick="window.location='{{ url("/game") }}'">Button</button>
+        <h1>Game</h1>
     </body>
 </html>
