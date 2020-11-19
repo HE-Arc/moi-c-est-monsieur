@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RipostCardController;
+use App\Http\Controllers\AttackCardController;
+use App\Http\Controllers\AttackRipostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,5 @@ Route::get('/game', function () {
 });
 
 Route::resource('ripost_cards', RipostCardController::class );
+Route::resource('attack_cards', AttackCardController::class );
+Route::resource('attack_ripost', AttackRipostController::class );

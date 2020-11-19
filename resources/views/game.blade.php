@@ -69,10 +69,13 @@
     <body class="antialiased">
         <h1>Game</h1>
 
+        <div class="card" onclick="myFunction()">
+                <p class="event_desc">{{$attack_ripost[0]->attack}}</p>
+            </div>
+
         <div id="cards" class="cards">
-			@foreach ($riposts as $ripost)
+			@foreach ($attack_ripost[1] as $ripost)
             <div class="card" onclick="myFunction()">
-                <h2>Title</h2>
                 <p class="event_desc">{{$ripost->ripost}}</p>
             </div>
 			@endforeach
