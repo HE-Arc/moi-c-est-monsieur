@@ -7,11 +7,25 @@
         <title>Laravel</title>
 		
 		<script>
-		function myFunction(){
-			
-		alert("Toast!");
-		
-		}
+        var score = 0;
+        var attack_id = JSON.parse("{{ json_encode($attack_ripost[0]->id) }}");
+        var count = JSON.parse("{{ json_encode($count) }}");
+
+		function validate(id){
+
+        var associations = <?php echo json_encode($associations); ?>
+
+        for (var association in associations)
+        {
+            if(associations[association]["ripost_id"] == id)
+            {
+                score += associations[association]["value"];
+                alert("Gagné, " + score);
+            }
+        }
+
+        }
+
 		</script>
 
         <!-- Fonts -->
@@ -75,7 +89,7 @@
 
         <div id="cards" class="cards">
 			@foreach ($attack_ripost[1] as $ripost)
-            <div class="card" onclick="myFunction()">
+            <div class="card" onclick="validate({{$ripost->id}})">
                 <p class="event_desc">{{$ripost->ripost}}</p>
             </div>
 			@endforeach
