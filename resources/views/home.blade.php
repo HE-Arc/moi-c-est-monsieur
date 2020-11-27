@@ -23,6 +23,6 @@
     </head>
     <body class="antialiased">
         <h1>Welcome</h1>
-		<button type="button" onclick="window.location='{{ url("/game") }}'">Button</button>
+		<button type="button" onclick="window.location='{{ url("/attack_ripost") }}'">Button</button>
     </body>
 </html>

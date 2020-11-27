@@ -69,7 +69,7 @@
     <body class="antialiased">
         <h1>Game</h1>
 
-        <div class="card" onclick="myFunction()">
+        <div class="card">
                 <p class="event_desc">{{$attack_ripost[0]->attack}}</p>
             </div>
 
