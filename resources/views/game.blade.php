@@ -82,14 +82,11 @@
         <div class="modal-content">
         <div class="modal-header">
             <span class="close">&times;</span>
-            <h2>Modal Header</h2>
+            <h2>{{$category[0]->nom}}</h2>
         </div>
         <div class="modal-body">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
-        </div>
-        <div class="modal-footer">
-            <h3>Modal Footer</h3>
+            <p>Ouille !</p>
+            <p>{{$category[0]->sermon}}</p>
         </div>
         </div>
 

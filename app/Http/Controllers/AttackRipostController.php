@@ -4,6 +4,7 @@
     use App\Models\AttackRipost;
     use App\Models\AttackCard;
     use App\Models\RipostCard;
+    use App\Models\Category;
 
 
     class AttackRipostController extends Controller
@@ -20,10 +21,10 @@
             $ripost = RipostCard::where('id', '<>' , $associations[0]['ripost_id'])->take(3)->union($valid_ripost)->get();
             
             $count = AttackRipost::where('attack_id', $attack['id'])->count();
-
+            $category = Category::where('id', $attack['category_id'])->get();
             
 
             $attack_ripost = [$attack, $ripost];
-            return view('game', ["attack_ripost"=>$attack_ripost, "associations"=>$associations, "count"=>$count]);
+            return view('game', ["attack_ripost"=>$attack_ripost, "associations"=>$associations, "count"=>$count, "category"=>$category]);
         }
     }
