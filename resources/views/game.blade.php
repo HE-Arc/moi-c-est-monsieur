@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{ URL::asset('public/css/cardstyle.css') }}"  rel='stylesheet' />
+        <link href="{{ URL::asset('public/css/popup.css') }}"  rel='stylesheet' />
         <script>
         var score = 0;
         var attack_id = JSON.parse("{{ json_encode($attack_ripost[0]->id) }}");
@@ -21,10 +22,12 @@
                 alert("Gagné : " + score);
 
                 localStorage.setItem("score", score);
+                location.reload();
             }
             else
             {
                 alert("Perdu");
+                openPopup();
             }
         }
         if(localStorage.getItem("manche") != "NaN")
@@ -43,7 +46,6 @@
             localStorage.setItem("score", 0);
 
         }
-        location.reload();
         }
         </script>
         <title>Moi c'est monsieur</title>
@@ -73,5 +75,26 @@
 			@endforeach
         </div>
 
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Modal Header</h2>
+        </div>
+        <div class="modal-body">
+            <p>Some text in the Modal Body</p>
+            <p>Some other text...</p>
+        </div>
+        <div class="modal-footer">
+            <h3>Modal Footer</h3>
+        </div>
+        </div>
+
+        </div>
+
     </body>
+    <script src="{{ asset('public/js/popup.js') }}"></script>
 </html>
