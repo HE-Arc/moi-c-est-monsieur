@@ -11,6 +11,10 @@
         var count = JSON.parse("{{ json_encode($count) }}");
         var associations = <?php echo json_encode($associations); ?>;
 
+        window.onload = function(){
+        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20";
+};
+
         function validate(id){
         for (var association in associations)
         {
@@ -46,6 +50,7 @@
             localStorage.setItem("score", 0);
 
         }
+        document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20";
         }
         </script>
         <title>Moi c'est monsieur</title>
@@ -61,6 +66,10 @@
     </head>
 
     <body class="antialiased">
+
+    <div class="score">
+                <p id="score" class="event_desc"></p>
+            </div>
         <h1>Game</h1>
 
         <div class="card">

@@ -37,3 +37,15 @@ body {
     .card:hover ~ .card {
         transform: translateX(4rem);
     }
+    .score{
+        background: white;
+        width: auto;
+        border-radius: 1rem;
+        padding: 2rem;
+        margin-left: -2rem;
+        box-shadow: 10px 10px 18px black;
+        transition: 0.2s;
+        position: fixed;
+        top: 5%;
+        left: 5%;
+    }
