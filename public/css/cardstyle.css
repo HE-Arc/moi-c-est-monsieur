@@ -1,5 +1,5 @@
 body {
-    background: #777;
+    background: rgb(42, 89, 143);
     height: 100vh;
     margin: 0;
     display: grid;
@@ -20,7 +20,9 @@ body {
     }
     .card {
         background: white;
-        width: 300px;
+        /**width: 300px;**/
+        max-width: 300px;
+        min-width: 150px;
         border-radius: 1rem;
         padding: 2rem;
         margin-left: -2rem;
