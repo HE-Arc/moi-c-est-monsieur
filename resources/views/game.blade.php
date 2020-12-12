@@ -10,10 +10,17 @@
         var attack_id = JSON.parse("{{ json_encode($attack_ripost[0]->id) }}");
         var count = JSON.parse("{{ json_encode($count) }}");
         var associations = <?php echo json_encode($associations); ?>;
+        var timer = setInterval(timerFunction, 200);
+        var time = 0;
 
         window.onload = function(){
-        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20";
+        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20" + "<br>" + "Time : " + time;
 };
+
+        function timerFunction() {
+        time++;
+        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20" + "<br>" + "Time : " + time;
+        }
 
         function validate(id){
         for (var association in associations)
@@ -70,7 +77,6 @@
     <div class="score">
                 <p id="score" class="event_desc"></p>
             </div>
-        <h1>Game</h1>
 
         <div class="card">
                 <p class="event_desc">{{$attack_ripost[0]->attack}}</p>
