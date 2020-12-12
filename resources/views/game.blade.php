@@ -22,14 +22,18 @@
         document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20" + "<br>" + "Time : " + time;
         }
 
+        function evaluateScore(score, time)
+        {
+            return (4*Math.exp(-time/6)+2) * score;
+        }
+
         function validate(id){
         for (var association in associations)
         {
             if(associations[association]["ripost_id"] == id)
             {
-                score = associations[association]["value"];
+                score = Math.ceil(evaluateScore(associations[association]["value"], time));
                 score = score + parseInt(localStorage.getItem("score"), 10);
-                console.log(score);
                 alert("Gagné : " + score);
 
                 localStorage.setItem("score", score);
