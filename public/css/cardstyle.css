@@ -6,8 +6,8 @@ body {
     place-items: center;
     }
     p.event_desc {
-    font: bold 1.5vmax "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.5vmax;
+    font: bold calc(0.3vmax + 10px) "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: calc(0.3vmax + 14px);
     height:75px;
     margin: 0px;
     display: table-cell;

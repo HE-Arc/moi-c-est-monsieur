@@ -34,16 +34,16 @@
             {
                 score = Math.ceil(evaluateScore(associations[association]["value"], time));
                 score = score + parseInt(localStorage.getItem("score"), 10);
-                alert("Gagné : " + score);
 
                 localStorage.setItem("score", score);
                 location.reload();
             }
             else
             {
-                alert("Perdu");
                 openPopup();
+                clearInterval(timer);
             }
+            
         }
         if(localStorage.getItem("manche") != "NaN")
         {
@@ -61,7 +61,7 @@
             localStorage.setItem("score", 0);
 
         }
-        document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20";
+        document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20" + "<br>" + "Time : " + time;
         }
         </script>
         <title>Moi c'est monsieur</title>
