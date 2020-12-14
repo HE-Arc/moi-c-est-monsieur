@@ -18,7 +18,7 @@
 
             //TODO: regarder le nombre de valid ripost à récupérer, s'arranger que ce ne soit pas toujours les mêmes
             $valid_ripost = RipostCard::where('id', $associations[0]['ripost_id']);
-            $ripost = RipostCard::where('id', '<>' , $associations[0]['ripost_id'])->take(3)->union($valid_ripost)->get();
+            $ripost = RipostCard::where('id', '<>' , $associations[0]['ripost_id'])->inRandomOrder()->limit(4)->union($valid_ripost)->get()->shuffle();
             
             $count = AttackRipost::where('attack_id', $attack['id'])->count();
             $category = Category::where('id', $attack['category_id'])->get();
