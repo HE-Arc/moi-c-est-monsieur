@@ -16,7 +16,7 @@ class CreateAttackRipostTable extends Migration
         Schema::create('attack_ripost', function (Blueprint $table) {
             $table->foreignId('attack_id');
             $table->foreignId('ripost_id');
-            $table->int('value');
+            $table->integer('value');
         });
     }
 

@@ -7,7 +7,6 @@
     <title>MOI C'EST MONSIEUR</title>
 
 
-    <!-- <link rel="stylesheet" href="../css/app.css">-->
     <link rel="stylesheet" href="<?php echo e(URL::asset('public/css/home.scss')); ?>">
 
 </head>
