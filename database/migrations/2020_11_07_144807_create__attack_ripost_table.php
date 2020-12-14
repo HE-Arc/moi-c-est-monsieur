@@ -13,7 +13,7 @@ class CreateAttackRipostTable extends Migration
      */
     public function up()
     {
-        Schema::create('attack_ripost', function (Blueprint $table) {
+        Schema::create('attack_riposts', function (Blueprint $table) {
             $table->foreignId('attack_id');
             $table->foreignId('ripost_id');
             $table->integer('value');
@@ -27,6 +27,6 @@ class CreateAttackRipostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attack_ripost');
+        Schema::dropIfExists('attack_riposts');
     }
 }
