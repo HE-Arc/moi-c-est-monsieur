@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
 
 
     <!-- <link rel="stylesheet" href="../css/app.css">-->
-    <link rel="stylesheet" href="{{ URL::asset('public/css/home.scss') }}">
+    <link rel="stylesheet" href="<?php echo e(URL::asset('public/css/home.scss')); ?>">
 
 </head>
 
@@ -16,7 +16,7 @@
 
     <div class="centered">
         <div id="card" class="card" style="width: 22rem;">
-            <img src="{{ URL::asset('public/images/skinny1.jpg') }}" class="card-img-top" alt="...">
+            <img src="<?php echo e(URL::asset('public/images/skinny1.jpg')); ?>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h3 class="card-title">MOI C'EST MONSIEUR</h3>
                 <p class="card-text">Le jeu qui vous aidera à vous faire respecter en tant qu'ingénieur et
@@ -30,7 +30,7 @@
                         id="nbCartesInput" placeholder="Nombre de cartes">
                     <input type="number" value="5" min="5" max="20" class="form-control mb-2" id="nbManchesInput"
                         placeholder="Nombre de manches">
-                    <a href="#" class="round-button" onclick="window.location='{{ url("/attack_ripost") }}'"><i class="fa fa-play fa-2x"></i></a>
+                    <a href="#" class="round-button" onclick="window.location='<?php echo e(url("/attack_ripost")); ?>'"><i class="fa fa-play fa-2x"></i></a>
                 </form>
             </div>
         </div>
@@ -40,8 +40,8 @@
     <div id="tsparticles"></div>
 
 
-    <script src="{{ URL::asset('public/js/tsparticles.min.js') }}"></script>
-    <script src="{{ URL::asset('public/js/header.js') }}"></script>
+    <script src="<?php echo e(URL::asset('public/js/tsparticles.min.js')); ?>"></script>
+    <script src="<?php echo e(URL::asset('public/js/header.js')); ?>"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -60,3 +60,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\wamp64\www\moi-c-est-monsieur\resources\views/home.blade.php ENDPATH**/ ?>
