@@ -8,6 +8,7 @@
         <link href="{{ URL::asset('public/css/popup.css') }}"  rel='stylesheet' />
         <script>
         var score = 0;
+        var scoreMax = 300;
         var attack_id = JSON.parse("{{ json_encode($attack_ripost[0]->id) }}");
         var count = JSON.parse("{{ json_encode($count) }}");
         var rounds = JSON.parse(JSON.stringify("{{ json_encode($rounds) }}")).replace(/&quot;/g,'');
@@ -16,12 +17,12 @@
         var time = 0;
 
         window.onload = function(){
-        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + time;
+        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + (time/5).toFixed(1) + "s";
 };
 
         function timerFunction() {
         time++;
-        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + time;
+        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + (time/5).toFixed(1) + "s";
         }
 
         function evaluateScore(score, time)
@@ -35,10 +36,20 @@
             if(associations[association]["ripost_id"] == id)
             {
                 score = Math.ceil(evaluateScore(associations[association]["value"], time));
+
+                var dirac = "8";
+                for(i = 0; i < score/5; i++)
+                {
+                    dirac+="=";
+                }
+                dirac += "D";
+
+                document.getElementById("victoryText").innerHTML = "Score de la riposte : " + dirac + "<br>" + "Temps de riposte : " + (time/5).toFixed(1) + "s";
                 score = score + parseInt(localStorage.getItem("score"), 10);
 
                 localStorage.setItem("score", score);
-                location.reload();
+
+                openPopupVictory();
             }
             else
             {
@@ -56,7 +67,7 @@
             localStorage.setItem("score", 0);
 
         }
-        document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + time;
+        document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + (time/5).toFixed(1) + "s";
         }
         </script>
         <title>Moi c'est monsieur</title>
@@ -101,6 +112,22 @@
         <div class="modal-body">
             <p>Ouille !</p>
             <p>{{$category[0]->sermon}}</p>
+        </div>
+        </div>
+
+        </div>
+
+         <!-- The Modal -->
+         <div id="modalVictory" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <div class="modal-header">
+            <span class="closeVictory">&times;</span>
+            <h2>Victoire</h2>
+        </div>
+        <div class="modal-body">
+            <p id="victoryText"></p>
         </div>
         </div>
 
