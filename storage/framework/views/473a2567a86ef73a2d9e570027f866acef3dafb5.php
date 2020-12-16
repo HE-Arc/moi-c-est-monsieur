@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <link href="<?php echo e(URL::asset('public/css/cardstyle.css')); ?>"  rel='stylesheet' />
         <link href="<?php echo e(URL::asset('public/css/popup.css')); ?>"  rel='stylesheet' />
         <script>
@@ -46,19 +47,12 @@
             }
             
         }
-        if(localStorage.getItem("manche") != "NaN")
-        {
-            localStorage.setItem("manche", 1+parseInt(localStorage.getItem("manche"), 10));
-            console.log(localStorage.getItem("manche"));
-        }
-        else
-        {
-            localStorage.setItem("manche", 1);
-        }
+
+        localStorage.setItem("manche", 1+parseInt(localStorage.getItem("manche"), 10));
 
         if(parseInt(localStorage.getItem("manche"), 10) > parseInt(rounds, 10))
         {
-            localStorage.setItem("manche", 0);
+            localStorage.setItem("manche", 1);
             localStorage.setItem("score", 0);
 
         }

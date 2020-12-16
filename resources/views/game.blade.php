@@ -47,19 +47,12 @@
             }
             
         }
-        if(localStorage.getItem("manche") != "NaN")
-        {
-            localStorage.setItem("manche", 1+parseInt(localStorage.getItem("manche"), 10));
-            console.log(localStorage.getItem("manche"));
-        }
-        else
-        {
-            localStorage.setItem("manche", 1);
-        }
+
+        localStorage.setItem("manche", 1+parseInt(localStorage.getItem("manche"), 10));
 
         if(parseInt(localStorage.getItem("manche"), 10) > parseInt(rounds, 10))
         {
-            localStorage.setItem("manche", 0);
+            localStorage.setItem("manche", 1);
             localStorage.setItem("score", 0);
 
         }

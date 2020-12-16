@@ -14,8 +14,18 @@
         {
             $attack = AttackCard::all()->random();
             $associations = AttackRipost::all();
-            $cards = $request->cards;
-            $rounds = $request->rounds;
+
+            if($request->filled('rounds')) {
+                $rounds = $request->rounds;
+            } else {
+                $rounds = 10;
+            }
+
+            if($request->filled('cards')) {
+                $cards = $request->cards;
+            } else {
+                $cards = 5;
+            }
 
             $associations = AttackRipost::where('attack_id', $attack['id'])->get();
 

@@ -3,13 +3,89 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>MOI C'EST MONSIEUR</title>
+    <style>
+    .round-button {
+    box-sizing: border-box;
+    display: block;
+    width: 80px;
+    height: 80px;
+    padding-top: 14px;
+    padding-left: 8px;
+    line-height: 20px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    color: #f5f5f5;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
 
+.round-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    // box-shadow: 0px 0px 10px rgba(255, 255, 100, 1);
+    // text-shadow: 0px 0px 10px rgba(255, 255, 100, 1);
+}
 
-    <link rel="stylesheet" href="<?php echo e(URL::asset('public/css/home.scss')); ?>">
+.body {
+    height: 100%;
+    width: 100%;
+}
+
+.centered {
+    background-color: red;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    */
+
+    z-index: 10;
+}
+
+#card {
+
+    position: absolute;
+    /*
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    */
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin-top: 5vh;
+}
+
+.card-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* ---- tsparticles container ---- */
+#tsparticles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+</style>
 
 </head>
+
 
 <body>
 
@@ -57,6 +133,11 @@
 
     <!--fonts for the project-->
     <script src="https://kit.fontawesome.com/58ec1321a7.js" crossorigin="anonymous"></script>
+
+    <script>
+        localStorage.setItem("manche", 1);
+        localStorage.setItem("score", 0);
+    </script>
 </body>
 
 </html>

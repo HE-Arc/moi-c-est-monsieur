@@ -133,6 +133,11 @@
 
     <!--fonts for the project-->
     <script src="https://kit.fontawesome.com/58ec1321a7.js" crossorigin="anonymous"></script>
+
+    <script>
+        localStorage.setItem("manche", 1);
+        localStorage.setItem("score", 0);
+    </script>
 </body>
 
 </html>
