@@ -24,12 +24,13 @@
                     les stéréotypes dont vous pouvez être victime !
                 </p>
                 <h2>À vous de jouer !</h2>
-                <form>
-                    <input type="number" value="5" inputmode="numeric" min="5" max="10" class="form-control mb-2"
+                <form id="form" action="<?php echo e(url("/attack_ripost")); ?>" method="post">
+                    <?php echo csrf_field(); ?>
+                    <input type="number" name="cards" inputmode="numeric" min="5" max="10" class="form-control mb-2"
                         id="nbCartesInput" placeholder="Nombre de cartes">
-                    <input type="number" value="5" min="5" max="20" class="form-control mb-2" id="nbManchesInput"
+                    <input type="number" name ="rounds" min="5" max="20" class="form-control mb-2" id="nbManchesInput"
                         placeholder="Nombre de manches">
-                    <a href="#" class="round-button" onclick="window.location='<?php echo e(url("/attack_ripost")); ?>'"><i class="fa fa-play fa-2x"></i></a>
+                    <a href="#" class="round-button" onclick="document.getElementById('form').submit();"><i class="fa fa-play fa-2x"></i></a>
                 </form>
             </div>
         </div>

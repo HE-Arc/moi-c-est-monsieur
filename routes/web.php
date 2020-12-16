@@ -24,6 +24,8 @@ Route::get('/game', function () {
     return view('game');
 });
 
+Route::post('/attack_ripost', [AttackRipostController::class, 'index']);
+
 Route::resource('ripost_cards', RipostCardController::class );
 Route::resource('attack_cards', AttackCardController::class );
-Route::resource('attack_ripost', AttackRipostController::class );
+//Route::resource('attack_ripost', AttackRipostController::class );

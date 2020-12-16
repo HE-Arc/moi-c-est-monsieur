@@ -9,17 +9,18 @@
         var score = 0;
         var attack_id = JSON.parse("<?php echo e(json_encode($attack_ripost[0]->id)); ?>");
         var count = JSON.parse("<?php echo e(json_encode($count)); ?>");
+        var rounds = JSON.parse(JSON.stringify("<?php echo e(json_encode($rounds)); ?>")).replace(/&quot;/g,'');
         var associations = <?php echo json_encode($associations); ?>;
         var timer = setInterval(timerFunction, 200);
         var time = 0;
 
         window.onload = function(){
-        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20" + "<br>" + "Time : " + time;
+        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + time;
 };
 
         function timerFunction() {
         time++;
-        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20" + "<br>" + "Time : " + time;
+        document.getElementById('score').innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + time;
         }
 
         function evaluateScore(score, time)
@@ -55,13 +56,13 @@
             localStorage.setItem("manche", 1);
         }
 
-        if(parseInt(localStorage.getItem("manche"), 10) > 20)
+        if(parseInt(localStorage.getItem("manche"), 10) > parseInt(rounds, 10))
         {
             localStorage.setItem("manche", 0);
             localStorage.setItem("score", 0);
 
         }
-        document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/20" + "<br>" + "Time : " + time;
+        document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + time;
         }
         </script>
         <title>Moi c'est monsieur</title>
