@@ -1,5 +1,6 @@
 body {
-    background: rgb(42, 89, 143);
+    background-image: url('../images/wallpaper.jpg');
+    background-size: cover;
     height: 100vh;
     margin: 0;
     display: grid;
