@@ -1,3 +1,4 @@
+//Creates the particle background with the words given by parameter
 function callParticles(m1, m2, m3) {
   tsParticles.load("tsparticles", {
     fpsLimit: 60,
