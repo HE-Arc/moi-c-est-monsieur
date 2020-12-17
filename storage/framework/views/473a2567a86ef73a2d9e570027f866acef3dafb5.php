@@ -31,6 +31,7 @@
         }
 
         function validate(id){
+        var flag = true;
         for (var association in associations)
         {
             if(associations[association]["ripost_id"] == id)
@@ -48,15 +49,14 @@
                 score = score + parseInt(localStorage.getItem("score"), 10);
 
                 localStorage.setItem("score", score);
-
+                flag = false;
                 openPopupVictory();
-            }
-            else
-            {
-                openPopup();
-                clearInterval(timer);
-            }
-            
+            }            
+        }
+        if(flag)
+        {                
+            openPopup();
+            clearInterval(timer);
         }
 
         localStorage.setItem("manche", 1+parseInt(localStorage.getItem("manche"), 10));
