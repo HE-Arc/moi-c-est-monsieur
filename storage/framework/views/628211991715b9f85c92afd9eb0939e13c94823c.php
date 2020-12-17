@@ -101,7 +101,7 @@
                     les stéréotypes dont vous pouvez être victime !
                 </p>
                 <h2>À vous de jouer !</h2>
-                <form id="form" action="<?php echo e(url("/attack_ripost")); ?>" method="post">
+                <form id="form" action="<?php echo e(url("/attack_ripost")); ?>" method="get">
                     <?php echo csrf_field(); ?>
                     <input type="number" name="cards" inputmode="numeric" min="5" max="10" class="form-control mb-2"
                         id="nbCartesInput" placeholder="Nombre de cartes">

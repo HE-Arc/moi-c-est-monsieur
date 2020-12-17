@@ -18,12 +18,12 @@ function openPopupVictory() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-  location.reload();
+  document.location.reload();
 }
 
 spanVictory.onclick = function() {
   modalVictory.style.display = "none";
-  location.reload();
+  document.location.reload();
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -31,6 +31,6 @@ window.onclick = function(event) {
   if (event.target == modal || event.target == modalVictory) {
     modal.style.display = "none";
     modalVictory.style.display = "none";
-    location.reload();
+    document.location.reload();
   }
 }

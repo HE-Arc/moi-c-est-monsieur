@@ -24,11 +24,8 @@ Route::get('/game', function () {
     return view('game');
 });
 
-Route::post('/attack_ripost', [AttackRipostController::class, 'index']);
+Route::get('/attack_ripost', [AttackRipostController::class, 'index']);
 
-Route::get('/attack_ripost', function () {
-    return view('home');
-});
 
 Route::get('/victory', function () {
     return view('victory');
