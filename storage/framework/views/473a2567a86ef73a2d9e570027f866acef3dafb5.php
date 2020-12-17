@@ -38,12 +38,12 @@
             {
                 score = Math.ceil(evaluateScore(associations[association]["value"], time));
 
-                var dirac = "8";
-                for(i = 0; i < score/5; i++)
+                var dirac = "<b>8";
+                for(i = 0; i < score/7; i++)
                 {
                     dirac+="=";
                 }
-                dirac += "D";
+                dirac += "D</b>";
 
                 document.getElementById("victoryText").innerHTML = "Score de la riposte : " + dirac + "<br>" + "Temps de riposte : " + (time/5).toFixed(1) + "s";
                 score = score + parseInt(localStorage.getItem("score"), 10);

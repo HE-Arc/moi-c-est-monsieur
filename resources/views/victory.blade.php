@@ -6,8 +6,6 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>VICTOIRE</title>
     <style>
-    
-
 .body {
     height: 100%;
     width: 100%;

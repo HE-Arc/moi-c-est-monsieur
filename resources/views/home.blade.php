@@ -23,6 +23,7 @@
     font-size: 20px;
     font-weight: bold;
     transition: all 0.3s ease;
+    margin-left: 7rem;
 }
 
 .round-button:hover {
