@@ -8,7 +8,7 @@
         <link href="{{ URL::asset('public/css/popup.css') }}"  rel='stylesheet' />
         <script>
         var score = 0;
-        var scoreMax = 300;
+        var scoreMax = 150;
         var attack_id = JSON.parse("{{ json_encode($attack_ripost[0]->id) }}");
         var count = JSON.parse("{{ json_encode($count) }}");
         var rounds = JSON.parse(JSON.stringify("{{ json_encode($rounds) }}")).replace(/&quot;/g,'');
@@ -63,10 +63,16 @@
 
         if(parseInt(localStorage.getItem("manche"), 10) > parseInt(rounds, 10))
         {
-            localStorage.setItem("manche", 1);
-            localStorage.setItem("score", 0);
-
-            window.location.href = "{{ url('/victory') }}";
+            if(parseFloat(localStorage.getItem("score"), 10) >= scoreMax*parseFloat(localStorage.getItem("manche"), 10)*0.4)
+            {
+                console.log("victoire");
+                window.location.href = "{{ url('/victory') }}";
+            }
+            else
+            {
+                console.log("defaite");
+                window.location.href = "{{ url('/defeat') }}";
+            }
 
         }
         document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + (time/5).toFixed(1) + "s";
