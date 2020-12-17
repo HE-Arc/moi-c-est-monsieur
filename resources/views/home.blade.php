@@ -120,6 +120,7 @@
     <script src="{{ URL::asset('public/js/tsparticles.min.js') }}"></script>
     <script src="{{ URL::asset('public/js/tsparticles.js') }}"></script>
     <script>
+        //Passes the parameters to the tsparticles.js with the selected words for the background
         callParticles('MOI','C\'EST','MONSIEUR');
     </script>
 

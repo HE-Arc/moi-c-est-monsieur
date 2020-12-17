@@ -91,10 +91,15 @@
     <script src="{{ URL::asset('public/js/tsparticles.min.js') }}"></script>
     <script src="{{ URL::asset('public/js/tsparticles.js') }}"></script>
      <script>
+        //Passes the parameters to the tsparticles.js with the selected words for the background
         callParticles('CUCK','SIMP','FDP');
+
+        //Gets the note and displays it for the user
         document.getElementById("note").innerHTML = "Note : <b>" + parseFloat(localStorage.getItem("note"), 10).toFixed(2) + "</b>/6";
     </script>
+
     <script>
+    //Sets the parameters for the audio player
     var mus = document.getElementById("music");
     mus.autoplay;
     mus.volume = 0.1;
