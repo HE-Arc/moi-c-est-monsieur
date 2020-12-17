@@ -17,7 +17,7 @@ use App\Http\Controllers\AttackRipostController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('victory');
 });
 
 Route::get('/game', function () {

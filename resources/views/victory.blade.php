@@ -4,32 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>MOI C'EST MONSIEUR</title>
+    <title>VICTOIRE</title>
     <style>
-    .round-button {
-    box-sizing: border-box;
-    display: block;
-    width: 80px;
-    height: 80px;
-    padding-top: 14px;
-    padding-left: 8px;
-    line-height: 20px;
-    border: 6px solid #fff;
-    border-radius: 50%;
-    color: #f5f5f5;
-    text-align: center;
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 20px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.round-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    // box-shadow: 0px 0px 10px rgba(255, 255, 100, 1);
-    // text-shadow: 0px 0px 10px rgba(255, 255, 100, 1);
-}
+    
 
 .body {
     height: 100%;
@@ -41,27 +18,14 @@
     position: relative;
     width: 100%;
     height: 100%;
-    /*
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    */
-
     z-index: 10;
 }
 
 #card {
 
     position: absolute;
-    /*
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    */
     left: 50%;
     transform: translateX(-50%);
-
     margin-top: 5vh;
 }
 
@@ -81,47 +45,47 @@
     background-size: cover;
     background-position: 50% 50%;
 }
-
 </style>
 
 </head>
-
-
-<body>
-
+<body >
     <div class="centered">
         <div id="card" class="card" style="width: 22rem;">
-            <img src="{{ URL::asset('public/images/skinny1.jpg') }}" class="card-img-top" alt="...">
+            <img src="{{ URL::asset('public/images/MegaChad.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h3 class="card-title">MOI C'EST MONSIEUR</h3>
-                <p class="card-text">Le jeu qui vous aidera à vous faire respecter en tant qu'ingénieur et
-                    combattre
-                    tous
-                    les stéréotypes dont vous pouvez être victime !
+                <h3 class="card-title">VICTOIRE !!!</h3>
+                <p class="card-text">Félicitation ! En gagnant cette partie tu prouves au monde 
+                à quel point tu es un chad, un vrai mâle alpha prêt à sauter à la gorge du 
+                moindre bêta osant t'adresser la parole.
                 </p>
-                <h2>À vous de jouer !</h2>
+                <h2>Refait une partie !</h2>
                 <form>
-                    <input type="number" value="5" inputmode="numeric" min="5" max="10" class="form-control mb-2"
-                        id="nbCartesInput" placeholder="Nombre de cartes">
-                    <input type="number" value="5" min="5" max="20" class="form-control mb-2" id="nbManchesInput"
-                        placeholder="Nombre de manches">
-                    <a href="#" class="round-button" onclick="window.location='{{ url("/attack_ripost") }}'"><i class="fa fa-play fa-2x"></i></a>
+                   <button type="submit" class="btn btn-primary" >LETS GOOOO</button>
                 </form>
-                 
+                
+                <audio id="music" controls autoplay loop preload="auto">
+                    <source src="{{ URL::asset('public/music/victory.mp3') }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+
             </div>
         </div>
 
     </div>
-
+ 
     <div id="tsparticles"></div>
-
-
+        
     <script src="{{ URL::asset('public/js/tsparticles.min.js') }}"></script>
     <script src="{{ URL::asset('public/js/tsparticles.js') }}"></script>
     <script>
-        callParticles('MOI','C\'EST','MONSIEUR');
+        callParticles('CHAD','ALPHA','DLMA');
     </script>
-
+    <script>
+    var mus = document.getElementById("music");
+    mus.autoplay;
+    mus.volume = 0.003;
+    </script>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
@@ -136,6 +100,7 @@
 
     <!--fonts for the project-->
     <script src="https://kit.fontawesome.com/58ec1321a7.js" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

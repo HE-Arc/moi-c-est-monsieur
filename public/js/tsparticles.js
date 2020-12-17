@@ -1,8 +1,4 @@
-
-
-function myFunction(m1, m2, m3) {
-
-  console.log("fdp");
+function callParticles(m1, m2, m3) {
   tsParticles.load("tsparticles", {
     fpsLimit: 60,
     interactivity: {
@@ -83,7 +79,7 @@ function myFunction(m1, m2, m3) {
         image: {
           height: 100,
           replace_color: true,
-          src: "../images/skinny1.jpg",
+          src: "",
           width: 100
         },
         polygon: { nb_sides: 5 },
