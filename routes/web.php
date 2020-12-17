@@ -37,4 +37,3 @@ Route::get('/defeat', function () {
 
 Route::resource('ripost_cards', RipostCardController::class );
 Route::resource('attack_cards', AttackCardController::class );
-//Route::resource('attack_ripost', AttackRipostController::class );

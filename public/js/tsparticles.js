@@ -46,7 +46,7 @@ function callParticles(m1, m2, m3) {
           sync: false
         }
       },
-      number: { density: { enable: true, area: 800 }, value: 100 },
+      number: { density: { enable: true, area: 800 }, value: 20 },
       opacity: {
         animation: { enable: true, minimumValue: 0.5, speed: 1, sync: false },
         random: false,
@@ -62,7 +62,7 @@ function callParticles(m1, m2, m3) {
             weight: "200"
           },
           {
-            fill: false,
+            fill: true,
             font: "Verdana",
             style: "",
             value: m2,
