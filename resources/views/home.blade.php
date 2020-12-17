@@ -103,9 +103,9 @@
                 <h2>À vous de jouer !</h2>
                 <form id="form" action="{{url("/attack_ripost")}}" method="get">
                     @csrf
-                    <input type="number" name="cards" inputmode="numeric" min="5" max="10" class="form-control mb-2"
+                    <input type="number" name="cards" inputmode="numeric" min="5" max="8" class="form-control mb-2"
                         id="nbCartesInput" placeholder="Nombre de cartes">
-                    <input type="number" name ="rounds" min="5" max="20" class="form-control mb-2" id="nbManchesInput"
+                    <input type="number" name ="rounds" min="5" max="15" class="form-control mb-2" id="nbManchesInput"
                         placeholder="Nombre de manches">
                     <a href="#" class="round-button" onclick="document.getElementById('form').submit();"><i class="fa fa-play fa-2x"></i></a>
                 </form>

@@ -16,13 +16,13 @@
             $associations = AttackRipost::all();
             $maxvalue = '50';
 
-            if($request->filled('rounds')) {
+            if($request->filled('rounds') && $request->rounds <= 15 && $request->rounds >= 5) {
                 $rounds = $request->rounds;
             } else {
                 $rounds = 10;
             }
 
-            if($request->filled('cards')) {
+            if($request->filled('cards') && $request->cards <= 8 && $request->rounds >= 5) {
                 $cards = $request->cards;
             } else {
                 $cards = 5;
