@@ -66,6 +66,8 @@
             localStorage.setItem("manche", 1);
             localStorage.setItem("score", 0);
 
+            window.location.href = "{{ url('/victory') }}";
+
         }
         document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + (time/5).toFixed(1) + "s";
         }

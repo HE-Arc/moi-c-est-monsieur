@@ -30,6 +30,14 @@ Route::get('/attack_ripost', function () {
     return view('home');
 });
 
+Route::get('/victory', function () {
+    return view('victory');
+});
+
+Route::get('/defeat', function () {
+    return view('defeat');
+});
+
 Route::resource('ripost_cards', RipostCardController::class );
 Route::resource('attack_cards', AttackCardController::class );
 //Route::resource('attack_ripost', AttackRipostController::class );
