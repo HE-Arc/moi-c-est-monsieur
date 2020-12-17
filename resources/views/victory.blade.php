@@ -52,7 +52,8 @@
             <img src="{{ URL::asset('public/images/MegaChad.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h3 class="card-title">VICTOIRE !!!</h3>
-                <p class="card-text">Félicitation ! En gagnant cette partie tu prouves au monde 
+                <p id="note"></p>
+                <p class="card-text">Félicitations ! En gagnant cette partie tu prouves au monde 
                 à quel point tu es un chad, un vrai mâle alpha prêt à sauter à la gorge du 
                 moindre bêta osant t'adresser la parole.
                 </p>
@@ -75,6 +76,7 @@
     <script src="{{ URL::asset('public/js/tsparticles.js') }}"></script>
     <script>
         callParticles('CHAD','ALPHA','DLMA');
+        document.getElementById("note").innerHTML = "Note : <b>" + parseFloat(localStorage.getItem("note"), 10).toFixed(2) + "</b>/6";   
     </script>
     <script>
     var mus = document.getElementById("music");

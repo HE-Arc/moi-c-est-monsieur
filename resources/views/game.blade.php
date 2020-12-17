@@ -63,7 +63,9 @@
 
         if(parseInt(localStorage.getItem("manche"), 10) > parseInt(rounds, 10))
         {
-            if(parseFloat(localStorage.getItem("score"), 10) >= scoreMax*parseFloat(localStorage.getItem("manche"), 10)*0.4)
+            var note = (parseFloat(localStorage.getItem("score"), 10) / (scoreMax*parseFloat(localStorage.getItem("manche"), 10)))*5+1;
+            localStorage.setItem("note", note);
+            if(note>=4)
             {
                 console.log("victoire");
                 window.location.href = "{{ url('/victory') }}";

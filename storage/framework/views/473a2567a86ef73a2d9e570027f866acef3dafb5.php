@@ -59,11 +59,11 @@
             clearInterval(timer);
         }
 
-        localStorage.setItem("manche", 1+parseInt(localStorage.getItem("manche"), 10));
-
         if(parseInt(localStorage.getItem("manche"), 10) > parseInt(rounds, 10))
         {
-            if(parseFloat(localStorage.getItem("score"), 10) >= scoreMax*parseFloat(localStorage.getItem("manche"), 10)*0.4)
+            var note = (parseFloat(localStorage.getItem("score"), 10) / (scoreMax*parseFloat(localStorage.getItem("manche"), 10)))*5+1;
+            localStorage.setItem("note", note);
+            if(note>=4)
             {
                 console.log("victoire");
                 window.location.href = "<?php echo e(url('/victory')); ?>";
@@ -75,6 +75,7 @@
             }
 
         }
+        localStorage.setItem("manche", 1+parseInt(localStorage.getItem("manche"), 10));
         document.getElementById("score").innerHTML = "Score : " + localStorage.getItem("score") + "<br>" + "Round : " + localStorage.getItem("manche") + "/" + rounds + "<br>" + "Time : " + (time/5).toFixed(1) + "s";
         }
         </script>

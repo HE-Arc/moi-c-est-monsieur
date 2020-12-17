@@ -69,6 +69,7 @@
             <img src="{{ URL::asset('public/images/SoyBoy.jpg') }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h3 class="card-title">DÉFAITE...</h3>
+                <p id="note"></p>
                 <p class="card-text">T'as perdu, bien joué. Tu viens de prouver à tout le monde 
                 quel sacré bêta cuck tu es en confirmant tout les clichés. Tu me donnes envie de vomir
                 vas-y dégage.
@@ -91,6 +92,7 @@
     <script src="{{ URL::asset('public/js/tsparticles.js') }}"></script>
      <script>
         callParticles('CUCK','SIMP','FDP');
+        document.getElementById("note").innerHTML = "Note : <b>" + parseFloat(localStorage.getItem("note"), 10).toFixed(2) + "</b>/6";
     </script>
     <script>
     var mus = document.getElementById("music");
