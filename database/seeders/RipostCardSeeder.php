@@ -247,6 +247,11 @@ class RipostCardSeeder extends Seeder
             'id' => "49",
         'ripost' => "ISSOU",
     ]);
+
+    DB::table('ripost_cards')->insert([
+        'id' => "42",
+    'ripost' => "Chuis pas un cuck wesh, alors tu me parles mieux",
+]);
        
     }
 }

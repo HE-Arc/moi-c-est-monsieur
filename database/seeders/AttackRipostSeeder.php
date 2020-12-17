@@ -1513,5 +1513,91 @@ DB::table('attack_riposts')->insert([
     'value' => "10",
     ]);
 
+    DB::table('attack_riposts')->insert([
+        'attack_id' => "1",
+        'ripost_id' => "42",
+        'value' => "20",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "3",
+        'ripost_id' => "42",
+        'value' => "5",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "4",
+        'ripost_id' => "42",
+        'value' => "8",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "6",
+        'ripost_id' => "42",
+        'value' => "20",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "7",
+        'ripost_id' => "42",
+        'value' => "8",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "11",
+        'ripost_id' => "42",
+        'value' => "15",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "14",
+        'ripost_id' => "42",
+        'value' => "15",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "15",
+        'ripost_id' => "42",
+        'value' => "15",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "17",
+        'ripost_id' => "42",
+        'value' => "5",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "22",
+        'ripost_id' => "42",
+        'value' => "15",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "29",
+        'ripost_id' => "42",
+        'value' => "30",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "32",
+        'ripost_id' => "42",
+        'value' => "15",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "33",
+        'ripost_id' => "42",
+        'value' => "10",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "34",
+        'ripost_id' => "42",
+        'value' => "20",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "35",
+        'ripost_id' => "42",
+        'value' => "35",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "36",
+        'ripost_id' => "42",
+        'value' => "30",
+        ]);
+      DB::table('attack_riposts')->insert([
+        'attack_id' => "37",
+        'ripost_id' => "42",
+        'value' => "35",
+        ]);
+
     }
 }
