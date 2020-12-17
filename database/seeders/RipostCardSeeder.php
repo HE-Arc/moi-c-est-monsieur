@@ -30,9 +30,9 @@ class RipostCardSeeder extends Seeder
     ]);
     
     DB::table('ripost_cards')->insert([
-            'id' => "4",
-        'ripost' => "Si si, ya juste ta mère dedans",
-    ]);
+        'id' => "4",
+    'ripost' => "J'ai une queue de rat aussi, tu veux la voir ?",
+]);
     
     DB::table('ripost_cards')->insert([
             'id' => "5",
@@ -56,13 +56,13 @@ class RipostCardSeeder extends Seeder
     
     DB::table('ripost_cards')->insert([
             'id' => "9",
-        'ripost' => "Je te calcule même pas",   /// à modifier si mieux
+        'ripost' => "Je te calcule même pas", 
     ]);
     
     DB::table('ripost_cards')->insert([
-            'id' => "10",
-        'ripost' => "",
-    ]);
+        'id' => "10",
+    'ripost' => "J'ai moins de pêché contre le sexe que toi !",
+]);
     
     DB::table('ripost_cards')->insert([
             'id' => "11",
@@ -111,12 +111,12 @@ class RipostCardSeeder extends Seeder
     
     DB::table('ripost_cards')->insert([
             'id' => "20",
-        'ripost' => "",
+        'ripost' => "Ta mère m'a appelé pour que je la dépanne, tu veux que je te dépose chez toi ?",
     ]);
     
     DB::table('ripost_cards')->insert([
             'id' => "21",
-        'ripost' => "",
+        'ripost' => "Pourquoi, t'aimes pas l'odeur de ta soeur ?",
     ]);
     
     DB::table('ripost_cards')->insert([
@@ -201,8 +201,52 @@ class RipostCardSeeder extends Seeder
         'ripost' => "Autant que t'as gagné sur OnlyFans",
     ]);
     
+    DB::table('ripost_cards')->insert([
+            'id' => "38",
+        'ripost' => "T'as le nez trop près de la bouche.",
+    ]);
+    
+    DB::table('ripost_cards')->insert([
+            'id' => "39",
+        'ripost' => "Ok coomer.",
+    ]);
+            
+    DB::table('ripost_cards')->insert([
+            'id' => "40",
+        'ripost' => "J'ai 0x6B9F conquêtes à mon actif. T'as pas compris? Normal c'est de l'hexadecimal, reviens me parler quand tu sera a mon niveau. C'est a dire jamais.",
+    ]);
+    
+    DB::table('ripost_cards')->insert([
+            'id' => "41",
+        'ripost' => "SUCE",
+    ]);
     
     
+    DB::table('ripost_cards')->insert([
+            'id' => "43",
+        'ripost' => "Miroir",
+    ]);
     
+   
+    DB::table('ripost_cards')->insert([
+            'id' => "46",
+        'ripost' => "Malaise",
+    ]);
+    
+    DB::table('ripost_cards')->insert([
+            'id' => "47",
+        'ripost' => "D'où tu me parles Jabba The Hut ?",
+    ]);
+    
+    DB::table('ripost_cards')->insert([
+            'id' => "48",
+        'ripost' => "Tu es qui ?",
+    ]);
+    
+    DB::table('ripost_cards')->insert([
+            'id' => "49",
+        'ripost' => "ISSOU",
+    ]);
+       
     }
 }

@@ -14,6 +14,7 @@
         {
             $attack = AttackCard::all()->random();
             $associations = AttackRipost::all();
+            $maxvalue = '50';
 
             if($request->filled('rounds')) {
                 $rounds = $request->rounds;
@@ -27,17 +28,22 @@
                 $cards = 5;
             }
 
-            $associations = AttackRipost::where('attack_id', $attack['id'])->get();
-
-            //TODO: regarder le nombre de valid ripost à récupérer, s'arranger que ce ne soit pas toujours les mêmes
-            $valid_ripost = RipostCard::where('id', $associations[0]['ripost_id']);
-            $ripost = RipostCard::where('id', '<>' , $associations[0]['ripost_id'])->inRandomOrder()->limit($cards - 1)->union($valid_ripost)->get()->shuffle();
-            
+            $associations = AttackRipost::where('attack_id', $attack['id'])->where('value', '<>', 50)->pluck('ripost_id')->toArray();
+            //var_dump($associations);
+            $association = AttackRipost::where('attack_id', $attack['id'])->where('value', 50)->pluck('ripost_id')->toArray();
+            //var_dump($association);
+            $valid_ripost = RipostCard::whereIn('id', $association);
+            //print_r($valid_ripost->toArray());
+            $valid_riposts = RipostCard::whereIn('id', $associations)->inRandomOrder()->limit(2);
+            //print_r($valid_riposts->toArray());
+            $ripost = RipostCard::whereNotIn('id', $associations)->whereNotIn('id', $association)->inRandomOrder()->limit($cards - 3)->union($valid_riposts)->union($valid_ripost)->get()->shuffle();
+            //print_r($ripost);
             $count = AttackRipost::where('attack_id', $attack['id'])->count();
             $category = Category::where('id', $attack['category_id'])->get();
             
 
             $attack_ripost = [$attack, $ripost];
+            $associations = AttackRipost::where('attack_id', $attack['id'])->get();
             return view('game', ["attack_ripost"=>$attack_ripost, "associations"=>$associations, "count"=>$count, "category"=>$category, "rounds"=>$rounds]);
         }
     }
