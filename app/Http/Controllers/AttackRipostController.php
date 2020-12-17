@@ -29,15 +29,10 @@
             }
 
             $associations = AttackRipost::where('attack_id', $attack['id'])->where('value', '<>', 50)->pluck('ripost_id')->toArray();
-            //var_dump($associations);
             $association = AttackRipost::where('attack_id', $attack['id'])->where('value', 50)->pluck('ripost_id')->toArray();
-            //var_dump($association);
             $valid_ripost = RipostCard::whereIn('id', $association);
-            //print_r($valid_ripost->toArray());
             $valid_riposts = RipostCard::whereIn('id', $associations)->inRandomOrder()->limit(2);
-            //print_r($valid_riposts->toArray());
             $ripost = RipostCard::whereNotIn('id', $associations)->whereNotIn('id', $association)->inRandomOrder()->limit($cards - 3)->union($valid_riposts)->union($valid_ripost)->get()->shuffle();
-            //print_r($ripost);
             $count = AttackRipost::where('attack_id', $attack['id'])->count();
             $category = Category::where('id', $attack['category_id'])->get();
             
