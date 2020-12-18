@@ -1,0 +1,54 @@
+body {
+    background-image: url('../images/wallpaper.jpg');
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    }
+    p.event_desc {
+    font: bold calc(0.3vmax + 10px) "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: calc(0.3vmax + 14px);
+    height:75px;
+    margin: 0px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+    text-align: center;
+    }
+    .cards {
+        display: flex;
+    }
+    .card {
+        background: white;
+        /**width: 300px;**/
+        max-width: 300px;
+        min-width: 150px;
+        border-radius: 1rem;
+        padding: 2rem;
+        margin-left: -2rem;
+        box-shadow: 10px 10px 18px black;
+        transition: 0.2s;
+    }
+    .card:not(:first-child) {
+        margin-left: -4rem;
+    }
+    .card:hover{
+        transform: translateY(-1rem);
+    }
+    /* s'applique aux cartes pas hover */
+    .card:hover ~ .card {
+        transform: translateX(4rem);
+    }
+    .score{
+        background: white;
+        width: auto;
+        border-radius: 1rem;
+        padding: 2rem;
+        margin-left: -2rem;
+        box-shadow: 10px 10px 18px black;
+        transition: 0.2s;
+        position: fixed;
+        top: 5%;
+        left: 5%;
+    }
