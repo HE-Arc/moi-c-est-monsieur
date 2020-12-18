@@ -131,7 +131,7 @@ class RipostCardSeeder extends Seeder
     
     DB::table('ripost_cards')->insert([
             'id' => "24",
-        'ripost' => "Est-ce qu'il y un .... dans le coin ? Ah non c'est juste toi...",
+        'ripost' => "Est-ce qu'il y un gros branleur dans le coin ? Ah non c'est juste toi...",
     ]);
     
     DB::table('ripost_cards')->insert([
